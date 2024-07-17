@@ -1,0 +1,83 @@
+body {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #D9D9D9;
+}
+button {
+    background-color: #D9D9D9;
+    border: 1px solid black;
+    outline: none;
+}
+button:hover {
+    text-decoration: underline;
+}
+.main {
+    margin: 110px 0 0 0;
+}
+#tablebox {
+    min-height: 600px;
+}
+table {
+    border-collapse: collapse;
+    width: 95%;
+    margin: 0 auto;
+}
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 10px;
+}
+.num {
+    width: 7%;
+}
+.writers, .date {
+    width: 8%;
+}
+.tablebtn {
+    width: 6%;
+}
+.tablebtns {
+    padding: 0;
+}
+.updatebtn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+}
+.deletebtn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+}
+#inputbox {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+#inputbox > input {
+    height: 35px;
+    background-color: #D9D9D9;
+    border: 1px solid black;
+    outline: none;
+}
+#writer {
+    width: 6.5%;
+    text-align: center;
+}
+#writer::placeholder {
+    text-align: center;
+}
+#content {
+    width: 80%;
+}
+#postbtn {
+    width: 10%;
+}

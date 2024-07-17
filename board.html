@@ -5,18 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>응원게시판</title>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-
-        th,
-        td {
-            border: 1px solid black;
-            text-align: center;
-            padding: 5px 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="board.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="module">
         // Firebase SDK 라이브러리 가져오기
@@ -42,6 +33,15 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
+        // 각 id에 html 문서 불러오기
+        /*
+            alt + B로 실행하는 html에서는 CORS 에러가 발생한다
+            이를 해결하기 위해서
+            vscode에서 live server를 다운 받고 alt + L O를 입력하여 실행한다
+        */
+        $('#header2').load("header2.html");
+        $('#footer2').load("footer2.html");
+
         // 게시글 불러오기
         const board = collection(db, "board_test");
         let docs = await getDocs(query(board, orderBy('date', 'desc')));
@@ -60,8 +60,8 @@
                 <td>${content}</td>
                 <td>${writer}</td>
                 <td>${(date.getMonth() + 1) < 9 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1}/${date.getDate()}</td>
-                <td><button class="updatebtn" value="${id}">수정</button></td>
-                <td><button class="deletebtn" value="${id}">삭제</button></td>
+                <td class="tablebtns"><button class="updatebtn" value="${id}">수정</button></td>
+                <td class="tablebtns"><button class="deletebtn" value="${id}">삭제</button></td>
             </tr>
             `;
 
@@ -74,14 +74,19 @@
             let content = $('#content').val();
             let date = new Date();
 
-            let doc = {
-                'writer': writer,
-                'content': content,
-                'date': date
-            };
-            await addDoc(board, doc);
+            if(writer != "" && content != "") {
+                let doc = {
+                    'writer': writer,
+                    'content': content,
+                    'date': date
+                };
+                await addDoc(board, doc);
 
-            window.location.reload();
+                window.location.reload();
+            }
+            else {
+                alert("작성자나 내용에 글을 입력해주세요");
+            }
         });
 
         // 게시글 수정하기
@@ -89,7 +94,7 @@
             let this_id = $(this).val();
             let content = prompt("수정하실 내용을 입력하세요");
 
-            if(content.length != 0) {
+            if (content.length != 0) {
                 await updateDoc(doc(db, "board_test", this_id), {
                     'content': content
                 });
@@ -97,7 +102,7 @@
                 window.location.reload();
             }
             else {
-                window.location.reload();
+                alert("수정하실 내용을 입력하지 않아 수정창을 종료합니다");
             }
         });
 
@@ -106,7 +111,7 @@
             let this_id = $(this).val();
             const isDel = confirm("게시글을 삭제하시겠습니까?");
 
-            if(isDel == true) {
+            if (isDel == true) {
                 await deleteDoc(doc(db, "board_test", this_id));
                 alert("삭제가 완료되었습니다!");
             }
@@ -117,25 +122,37 @@
 </head>
 
 <body>
-    <h3>게시판</h3>
+    <header id="header2">
+        
+    </header>
 
-    <table id="articles">
-        <tr>
-            <th>번호</th>
-            <th>내용</th>
-            <th>작성자</th>
-            <th>날짜</th>
-            <th>수정</th>
-            <th>삭제</th>
-        </tr>
+    <div class="main">
+        <h3>게시판</h3>
 
-    </table>
+        <div id="tablebox">
+            <table id="articles">
+                <tr>
+                    <th class="num">번호</th>
+                    <th class="contents">내용</th>
+                    <th class="writers">작성자</th>
+                    <th class="date">날짜</th>
+                    <th class="tablebtn">수정</th>
+                    <th class="tablebtn">삭제</th>
+                </tr>
 
-    <div>
-        <input type="text" placeholder="작성자" id="writer">
-        <input type="text" placeholder="내용을 입력해주세요" id="content">
-        <button id="postbtn">등록</button>
+            </table>
+        </div>
+
+        <div id="inputbox">
+            <input type="text" placeholder="작성자" id="writer">
+            <input type="text" placeholder="내용을 입력해주세요" id="content">
+            <button id="postbtn">등록</button>
+        </div>
     </div>
+
+    <footer id="footer2">
+        
+    </footer>
 </body>
 
 </html>
