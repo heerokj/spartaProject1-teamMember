@@ -34,6 +34,8 @@ th, td {
 }
 .tablebtn {
     width: 6%;
+    border-top: 0;
+    border-right: 0;
 }
 .tablebtns {
     padding: 0;
