@@ -1,4 +1,6 @@
-html {overflow: hidden;}  /* 스크롤바를 없애기 위한 소스 */
+html {
+  overflow: hidden;
+} /* 스크롤바를 없애기 위한 소스 */
 
 html,
 body {
@@ -7,8 +9,10 @@ body {
   margin: 0; /* 기본 마진 제거 */
   color: white;
 }
-nav, footer, .circle {
-    z-index: 1000; /* 헤더가 다른 요소들 위에 표시되도록 z-index 설정 */
+nav,
+footer,
+.circle {
+  z-index: 1000; /* 헤더가 다른 요소들 위에 표시되도록 z-index 설정 */
 }
 .team-member-wrap {
   width: 100%;
@@ -27,37 +31,37 @@ nav, footer, .circle {
 }
 
 /*=== 첫번째 페이지 ===*/
-.content-goal{
+.content-goal {
   width: 900px;
   height: 700px;
   border-radius: 5px;
-
 }
-.contents-goal-title{
-    padding: 0px 0px 20px 20px;
-    text-align: center;
-    font-weight: bold ;
-    font-size: 50px;
+.contents-goal-title {
+  padding: 0px 0px 20px 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 60px;
 }
-.contents-items{
-    display: grid;
-    grid-template-columns: 450px 450px; /* 가로길이를 각각 300 300 2개로 나눈다.  */
-    grid-template-rows: 250px 250px;    /* 세로 길이를 200 200으로 두개로 나눈다. */
+.contents-items {
+  display: grid;
+  grid-template-columns: 450px 450px; /* 가로길이를 각각 300 300 2개로 나눈다.  */
+  grid-template-rows: 250px 250px; /* 세로 길이를 200 200으로 두개로 나눈다. */
 }
-.item{
-    padding: 10px 5px;
-    margin: 0px 20px;
+.item {
+  padding: 10px 5px;
+  margin: 0px 20px;
 }
-#item-3{
-    text-align: right;
+#item-3 {
+  text-align: right;
 }
-#project-imag{
+#project-imag {
   width: 100%;
   height: 100%;
   object-fit: fill;
   border-radius: 10px;
-} 
-.moveBottomBtn{
+}
+.moveBottomBtn {
   text-align: center;
   position: absolute;
 
@@ -65,69 +69,69 @@ nav, footer, .circle {
   left: 50%;
   transform: translateX(-50%);
 }
-.arrow{
+.arrow {
   height: 30px;
   width: 30px;
-  filter:invert(); 
+  filter: invert();
 }
-#down-arrow{
+#down-arrow {
   position: relative;
   bottom: 20px;
 }
 
-
 /*===두번째 페이지===*/
-.content-guide{
+.content-guide {
   width: 900px;
-  height: 1000px;
-  margin: 0px auto; 
+  height: 100%;
+  margin: 0px auto;
   padding: 20px;
   border-radius: 5px;
   position: relative;
   top: 200px;
 }
-.contents-guide-title{
+.contents-guide-title {
   text-align: center;
-  font-weight: bold ;
-  font-size: 50px;
+  font-weight: bold;
+  font-size: 60px;
   padding: 0px 0px 0px 30px;
+  margin: 50px;
 }
-.guide-list{
+.guide-list {
   width: 700px;
   height: 500px;
-  margin: 30px auto 40px auto;
+  margin: 80px auto 40px auto;
   list-style-type: none;
   text-align: center;
 }
-.guide-item{
+.guide-item {
   width: 500px;
   height: 100px;
   margin: 30px auto 0px auto;
   border: 1px solid gray;
   border-radius: 50px;
   background-color: #ffffff;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
   display: grid;
   grid-template-columns: 100px 300px;
-  grid-template-rows: 80px; 
+  grid-template-rows: 80px;
 }
-#book-img{
+#book-img {
   width: 50px;
   height: 50px;
   padding-top: 15px;
 }
-.guide-item-text{
+.guide-item-text {
   text-align: left;
   color: black;
 }
-h3{
+h3 {
   margin-bottom: 0px;
 }
-h5{
+h5 {
   margin-top: 5px;
 }
-.moveTopBtn{
+.moveTopBtn {
   text-align: center;
   position: absolute;
 
@@ -135,11 +139,11 @@ h5{
   left: 50%;
   transform: translateX(-50%);
 }
-#up-arrow{
+#up-arrow {
   position: relative;
   bottom: 20px;
 }
-.circle{
+.circle {
   width: 20px;
   height: 20px;
   background-color: #ee9b00;
@@ -149,18 +153,18 @@ h5{
   right: 0%;
   top: 45%;
 }
-#two{
+#two {
   position: absolute;
   right: 0%;
   top: 50%;
 }
-#three{
+#three {
   position: absolute;
   right: 0%;
-  top: 145%; 
+  top: 145%;
 }
-#four{
+#four {
   position: absolute;
   right: 0%;
-  top: 150%; 
+  top: 150%;
 }
