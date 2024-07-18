@@ -1,33 +1,33 @@
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #ffa802;
-    padding: 40px 20px 20px 20px;
-    /* border-top: 1px solid #ff0202; */
-    font-family: Arial, sans-serif;
-    color: #fff;
-    box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffa802;
+  padding: 40px 20px 20px 20px;
+  /* border-top: 1px solid #ffc353; */
+  font-family: Arial, sans-serif;
+  color: #fff;
+  box-sizing: border-box;
 }
 footer div {
-    display: inline-block;
-    font-size: 14px;
+  display: inline-block;
+  font-size: 14px;
 }
 .footer_container {
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
 }
 .copyright {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 .team_name {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 .en_team_name {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 .en_member_name {
-    margin-left: 42px;
+  margin-left: 42px;
 }
