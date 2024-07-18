@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="css/teamMember.css" />
+<link rel="stylesheet" href="css/footer.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/includeHTML.js"></script>
+<script>
+  window.onload = function() {
+
+    let $html = $("html");
+    let page = 1; 
+    let lastPage = $(".team-member-wrap").length; //마지막 페이지 번호
+    $html.animate({ scrollTop: 0 }, 10); //문서(페이지)가 로드되면 첫 페이지 시작
+
+    // page == 1 인 경우 화이트로 색 변경
+    if (page == 1) {
+      let circle = document.getElementById("one");
+      circle.style.backgroundColor = "white";
+    }
+
+    //휠을 굴리면 다음 페이지, 이전 페이지
+    window.addEventListener("wheel", function (e) {
+      e.preventDefault();
+    }, { passive: false });
+
+    $(window).on("wheel", function (e) {
+
+      if ($html.is(":animated")) return;
+
+      //스크롤을 아래로 했으면 페이지 +1, 위로 올렸으면 -1씩 시키기 
+      if (e.originalEvent.deltaY > 0) {
+        if (page == lastPage) return; //마지막 페이지인 경우에는 이벤트 핸들러 종료
+        page++;
+      } else if (e.originalEvent.deltaY < 0) {
+        if (page == 1) return; //첫 번째 페이지인 경우에도 이벤트 핸들러 종료
+        page--;
+      }
+      var posTop = (page - 1) * $(window).height(); //이동할 페이지의 번호에 스크롤할 위치 계산
+
+      $html.animate({ scrollTop: posTop }); //계산한 위치로 이동
+
+      // page == 2 인 경우 화이트로 색 변경
+      if (page == 2) {
+        let circle = document.getElementById("four");
+        circle.style.backgroundColor = "white";
+      }
+
+    });
+  }
+</script>
+</head>
+<body>
+  <div data-include-path="./header.html"></div>
+  <div class="circle" id="one"></div>
+  <div class="circle" id="two"></div>
+  <div class="circle" id="three"></div>
+  <div class="circle" id="four"></div>
+  <!-- team goal 소개-->
+  <div class="team-member-wrap"> 
+    <div class="content-goal">
+      <div class="contents-goal-title">GOAL</div>
+      <div class="contents-items">
+          <div class="item"><img src="images/team-project.jpg" id="project-imag" alt="team1"></div>
+          <div class="item">
+              <h2>
+                  좋은 동료,
+              <br>
+                  좋은 포트폴리오
+              </h2>
+              <h4>
+                  캠프를 진행하면서 좋은 동료로서 성장과 
+                  <br>
+                  좋은 포트폴리오를 쌓아가려합니다.
+              </h4>
+          </div>
+          <div class="item" id="item-3">
+              <h2>
+                  좋은 개발자로서 성장
+              </h2>
+              <h4>
+                  트랜트르 따라가며 소통이 되는 
+                  <br>
+                  개발자가 되기 위해 노력하고 달려나가겠습니다.
+              </h4>
+          </div>
+          <div class="item"><img src="images/team-project2.jpg" id="project-imag" alt="team2"></div>
+      </div>
+    </div>
+    <div class="moveBottomBtn"><img src="images/down-arrow.png" class="arrow" id="down-arrow" alt="moveBottom"></div>
+  </div>
+
+  <!--team guide 소개-->
+  <div class="team-member-wrap">
+    <div class="content-guide">
+      <div class="contents-guide-title">TEAM GUIDE</div>
+      <ul class="guide-list">
+          <li class="guide-item">
+              <div><img src="images/books.png" id="book-img" alt="book"></div>
+              <div class="guide-item-text">
+                  <h3>인사이트 공유하기</h3>
+                  <h5>좋은 작업물이 있으면 함께 공유해요</h5>
+              </div>
+          </li>
+          <li class="guide-item">
+              <div><img src="images/books.png" id="book-img" alt="book"></div>
+              <div class="guide-item-text">
+                  <h3>마이크 카메라 켜기</h3>
+                  <h5>팀원들과 자유롭게 소통해요</h5>
+              </div>
+          </li>
+          <li class="guide-item">
+              <div><img src="images/books.png" id="book-img" alt="book"></div>
+              <div class="guide-item-text">
+                  <h3>지각하지 않기</h3>
+                  <h5>약속시간을 잘 지켜요</h5>
+              </div>
+          </li>
+          <li class="guide-item">
+              <div><img src="images/books.png" id="book-img" alt="book"></div>
+              <div class="guide-item-text">
+                  <h3>궁금한거 물어보기</h3>
+                  <h5>모르는게 있으면 함께 고민하고 해결해요</h5>
+              </div>
+          </li>
+      </ul>      
+  </div>>
+    <div class="moveTopBtn"><img src="images/up-arrow.png" class="arrow" id="up-arrow" alt="moveTop"></div>
+  </div>
+  <div data-include-path="./footer2.html"></div>
+  <script src="js/teamMember2.js"></script>
+</body>
+</html>
