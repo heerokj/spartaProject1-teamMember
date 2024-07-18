@@ -1,0 +1,145 @@
+body,
+ul,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background-color: #ffa802;
+  color: white;
+}
+
+.list-wrap {
+  /* .team에 있는 내용들을 정렬하기 위해 부모에서 flex를 줌 */
+  display: flex;
+
+  /* wrapper 안에 담겨있는 내용물들의 높이 */
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.team {
+  /* 쉽게 가로로 배치되게 하기 위해 */
+  display: flex;
+  justify-content: center;
+}
+
+.team-item {
+  margin: 20px;
+  background-color: white;
+  border-radius: 20px;
+  /* box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); */
+}
+
+.team-item :hover {
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.profile {
+  /* background-color: red; */
+  height: 450px;
+  width: 300px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.members-img {
+  width: 100%;
+  margin: 0 auto;
+  height: 200px;
+  object-fit: cover;
+  padding: 15px;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.profile-contents {
+  /* background-color: blue; */
+  text-align: center;
+  color: #333;
+  margin: 10px 20px;
+}
+
+.profile-contents h2 {
+  font-size: 2em;
+}
+.profile-contents h2 span {
+  font-size: 1em;
+}
+
+.profile-contents p {
+  margin-top: 20px;
+  font-size: 1em;
+}
+
+.icon-list {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.icon {
+  height: 40px;
+  border-radius: 100px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-body {
+  width: 800px;
+  height: 500px;
+  background-color: white;
+  border-radius: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute; /* 부모 요소를 기준으로 요소 배치 */
+  top: 50%;
+  left: 50%; /* 부모 요소의 중앙에 왼쪽 상단 모서리가 위치 */
+  transform: translateX(-50%) translateY(-50%); /* 자신 크기의 50%만큼 왼쪽과 위로 이동 > 요소의 중심이 부모 요소의 중앙에 정확히 위치 */
+}
+
+.modal-body h2 {
+  color: #333;
+  margin: 30px 30px 15px;
+}
+
+.modal-body p {
+  color: #333;
+  margin: 20px 60px;
+}
+
+.modal-img {
+  border-radius: 1000px;
+  height: 200px;
+}
+
+.close-modal {
+  color: red;
+}
