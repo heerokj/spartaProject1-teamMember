@@ -1,7 +1,4 @@
 body {
-    width: 1200px;
-    height: 2000px;
-    margin: 0 auto;
     background-color: #D9D9D9;
 }
 button {
@@ -13,10 +10,11 @@ button:hover {
     text-decoration: underline;
 }
 .main {
-    margin: 110px 0 0 0;
+    width: 1200px;
+    margin: 110px auto 0 auto;
 }
 #tablebox {
-    min-height: 600px;
+    min-height: 596px;
 }
 table {
     border-collapse: collapse;
@@ -36,6 +34,8 @@ th, td {
 }
 .tablebtn {
     width: 6%;
+    border-top: 0;
+    border-right: 0;
 }
 .tablebtns {
     padding: 0;
