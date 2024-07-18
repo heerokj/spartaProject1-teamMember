@@ -4,30 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="js/includeHTML.js"></script>
+
     <link rel="stylesheet" href="index.css" />
   </head>
 
-  <script>
-    //   $(document).ready(function () {
-    //     $("#header").load("/header.html");
-    //   });
-    //   $(document).ready(function () {
-    //     $("#footer").load("/footer.html");
-    //   });
-  </script>
-
   <body>
-    <h1>육캔두잇</h1>
-    <div class="team_text">
-      <p>
-        안녕하세요~ 6조 육캔두잇입니다! 안녕하세요~ 6조 육캔두잇입니다!
-        안녕하세요~ 6조 육캔두잇입니다! 안녕하세요~ 6조 육캔두잇입니다!
-        안녕하세요~ 6조 육캔두잇입니다! 안녕하세요~ 6조 육캔두잇입니다!
-      </p>
+    <header>
+      <div data-include-path="./header.html">헤더</div>
+    </header>
+
+    <div class="container">
+      <h1>육캔두잇</h1>
+      <div class="team_text">
+        <p>
+          안녕하세요~ 6조 육캔두잇입니다! <br />
+          저희 조는 모두가 서로를 믿고 응원하며 함께 성장해 나가는 것을
+          지향합니다. <br />
+          긍정적인 마음가짐과 끊임없는 도전 정신으로, 화이팅해봅시다!
+        </p>
+      </div>
+      <div class="btn_container">
+        <a class="team_btn" href="team-member.html">팀 소개 보러가기</a>
+        <a class="team_btn" href="members.html">팀 멤버 보러가기</a>
+      </div>
     </div>
-    <div class="btn_container">
-      <button class="team_btn">팀 소개 보러가기</button>
-      <button class="member_btn">팀 멤버 보러가기</button>
-    </div>
+
+    <footer>
+      <div data-include-path="footer.html"></div>
+    </footer>
   </body>
 </html>
