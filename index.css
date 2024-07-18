@@ -1,19 +1,34 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   background-color: #ffa802;
   color: white;
-  height: 100%;
-  margin: 0;
-  padding: 100px 0px;
-  text-align: center;
 }
 
-h1 {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50px);
+}
+
+.container h1 {
   font-size: 80px;
   margin-bottom: 30px;
+  display: block;
 }
 
 .team_text {
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
 }
@@ -22,6 +37,7 @@ p {
   font-size: 24px;
   width: 800px;
   display: block;
+  text-align: center;
 }
 
 .btn_container {
@@ -30,9 +46,9 @@ p {
   align-items: center;
 }
 
-button {
+.team_btn {
   padding: 20px 60px;
-  width: 400px;
+  width: 300px;
   outline: none;
   border-radius: 100px;
   cursor: pointer;
@@ -40,9 +56,11 @@ button {
   border: 1px solid white;
   background-color: white;
   color: #ffa802;
+  text-decoration: none;
+  text-align: center;
 }
 
-.btn_container button:hover {
+.team_btn:hover {
   background-color: #ffa802;
   color: white;
 }

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>팀 소개하기</title>
+<
     <link rel="stylesheet" href="css/team-member.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <script src="js/includeHTML.js"></script>
@@ -46,40 +47,49 @@
     <div class="circle three"></div>
     <div class="circle four"></div>
     <div class="container">
-        <!-- team goal 소개-->
-        <div class="list" id="goal">
-            <div><h2 id="team-intro">팀 소개</h2></div>
-            <div class="content-goal">
-                <div class="contents-title-goal">GOAL</div>
-                <div class="contents">
-                    <div class="item"><img src="images/team-project.jpg" id="project-imag" alt="team1"></div>
-                    <div class="item">
-                        <h2>
-                            좋은 동료,
-                        <br>
-                            좋은 포트폴리오
-                        </h2>
-                        <h4>
-                            캠프를 진행하면서 좋은 동료로서 성장과 
-                            <br>
-                            좋은 포트폴리오를 쌓아가려합니다.
-                        </h4>
-                    </div>
-                    <div class="item" id="item-3">
-                        <h2>
-                            좋은 개발자로서 성장
-                        </h2>
-                        <h4>
-                            트랜트르 따라가며 소통이 되는 
-                            <br>
-                            개발자가 되기 위해 노력하고 달려나가겠습니다.
-                        </h4>
-                    </div>
-                    <div class="item"><img src="images/team-project2.jpg" id="project-imag" alt="team2"></div>
-                </div>
+      <!-- team goal 소개-->
+      <div class="list" id="goal">
+        <div><h2 id="team-intro">팀 소개</h2></div>
+        <div class="content-goal">
+          <div class="contents-title-goal">GOAL</div>
+          <div class="contents">
+            <div class="item">
+              <img
+                src="images/team-project.jpg"
+                id="project-imag"
+                alt="team1"
+              />
             </div>
-            <div class="moveBottomBtn"><img src="images/down-arrow.png" class="arrow" id="down-arrow" alt="moveBottom"></div>
+            <div class="item">
+              <h2>
+                좋은 동료,
+                <br />
+                좋은 포트폴리오
+              </h2>
+              <h4>
+                캠프를 진행하면서 좋은 동료로서 성장과
+                <br />
+                좋은 포트폴리오를 쌓아가려합니다.
+              </h4>
+            </div>
+            <div class="item" id="item-3">
+              <h2>좋은 개발자로서 성장</h2>
+              <h4>
+                트랜트르 따라가며 소통이 되는
+                <br />
+                개발자가 되기 위해 노력하고 달려나가겠습니다.
+              </h4>
+            </div>
+            <div class="item">
+              <img
+                src="images/team-project2.jpg"
+                id="project-imag"
+                alt="team2"
+              />
+            </div>
+          </div>
         </div>
+
         
 
         <!--team guide 소개-->
@@ -122,6 +132,9 @@
     </div>
     <div data-include-path="./footer2.html"></div>
     <script>
+      const bottomBtn = document.querySelector(".moveBottomBtn");
+      const topBtn = document.querySelector(".moveTopBtn");
+
 
         const bottomBtn = document.querySelector(".moveBottomBtn");
         const topBtn = document.querySelector(".moveTopBtn");
@@ -142,7 +155,7 @@
 
         //스크롤이 끝으로 이동 시
         if(scrollLocation + windowHeight >= fullHeight){
-            
+      
         
 	}
 })

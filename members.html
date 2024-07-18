@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>육캔두잇</title>
     <link rel="stylesheet" href="members.css" />
+    <script src="js/includeHTML.js"></script>
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
 
   <script></script>
 
   <body>
+    <header>
+      <div data-include-path="./header.html">헤더</div>
+    </header>
     <div class="list-wrap">
       <ul class="team">
         <li class="team-item" data-modal="modal1">
           <div class="profile">
-            <img class="members-img" src="./images/jonghoy.png" />
+            <img class="members-img" src="./images/jongho_pic.png" />
             <div class="profile-contents">
               <h2>장종호</h2>
               <span>JongHoy</span>
@@ -58,7 +67,7 @@
 
         <li class="team-item" data-modal="modal2">
           <div class="profile">
-            <img class="members-img" src="./images/jonghoy.png" />
+            <img class="members-img first-member" src="./images/jonghoy.png" />
             <div class="profile-contents">
               <h2>정희록</h2>
               <span>HeeRokJ</span>
@@ -70,7 +79,11 @@
               <div class="icon-list">
                 <img class="icon" src="./images/github_icon.webp" />
                 <img class="icon" src="./images/velog.png" />
-                <img class="icon" src="./images/message.png" />
+                <img
+                  class="icon message-icon"
+                  src="./images/message.png"
+                  data-contact="010-1234-5678"
+                />
               </div>
             </div>
           </div>
@@ -132,8 +145,9 @@
           학부 시절, 사람들이 편리하게 서비스를 사용할 수 있도록 고민하는 것이
           재미있었습니다. 그래서
           <strong>창의적인 문제 해결과 사용성 향상에 대한 열정</strong>으로
-          <strong> UX 기획자</strong>로 일하게 되었습니다. 그리고 현재는 다양한
-          도전과 변화 속에서 더욱 더 성장하기 위해
+          <strong> UX 기획자</strong>로 일하게 되었습니다. <br />
+          <br />
+          그리고 현재는 다양한 도전과 변화 속에서 더욱 더 성장하기 위해
           <strong>프론트엔드 개발자로 전직</strong>을 준비 중입니다.
         </p>
       </div>
@@ -169,6 +183,9 @@
         </p>
       </div>
     </div>
+    <footer>
+      <div data-include-path="footer.html"></div>
+    </footer>
 
     <script src="members.js"></script>
   </body>
