@@ -1,245 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>팀 소개하기</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-<style>
-    body{
-        background-color: #FFA802;
-        color: white;
-        margin: 0; /* 기본 마진 제거 */
+  </head>
+  <style>
+    body {
+      background-color: #ffa802;
+      color: white;
+      margin: 0; /* 기본 마진 제거 */
     }
-    .container{
-        scroll-behavior: smooth;
-        scroll-snap-type: y mandatory;  /* y 축 방향으로만 scroll snap 적용 */
+    .container {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory; /* y 축 방향으로만 scroll snap 적용 */
     }
-    .list{
-        scroll-snap-align: start; /* 스크롤 위치 맞춤 */
-        
-        /* 화살표 이미지 때문에 설정*/
-        position: relative; 
-        min-height: 100vh; /* 부모 요소의 높이를 화면 높이로 설정 (gpt)*/
+    .list {
+      scroll-snap-align: start; /* 스크롤 위치 맞춤 */
+
+      /* 화살표 이미지 때문에 설정*/
+      position: relative;
+      min-height: 100vh; /* 부모 요소의 높이를 화면 높이로 설정 (gpt)*/
     }
 
     /*===첫번째 페이지===*/
-    #team-intro{
-        padding: 80px 0px 0px 55px;
-        margin-bottom: 0px;
+    #team-intro {
+      padding: 80px 0px 0px 55px;
+      margin-bottom: 0px;
     }
-    .content-goal{
-        width: 900px;
-        margin: 0px auto; /* 20px auto 20px auto; 이랑 같음*/
-        padding: 0px 20px;
-        border-radius: 5px;
+    .content-goal {
+      width: 900px;
+      margin: 0px auto; /* 20px auto 20px auto; 이랑 같음*/
+      padding: 0px 20px;
+      border-radius: 5px;
     }
-    .contents-title-goal{
-        margin: 0px auto;
-        padding: 0px 0px 20px 20px;
-        text-align: center;
-        font-weight: bold ;
-        font-size: 50px;
+    .contents-title-goal {
+      margin: 0px auto;
+      padding: 0px 0px 20px 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 50px;
     }
-    .contents{
-        display: grid;
-        grid-template-columns: 450px 450px; /* 가로길이를 각각 300 300 2개로 나눈다. */
-        grid-template-rows: 250px 250px;    /* 세로 길이를 200 200으로 두개로 나눈다. */
+    .contents {
+      display: grid;
+      grid-template-columns: 450px 450px; /* 가로길이를 각각 300 300 2개로 나눈다. */
+      grid-template-rows: 250px 250px; /* 세로 길이를 200 200으로 두개로 나눈다. */
     }
-    .item{
-        padding: 10px 5px;
-        margin: 0px 20px;
+    .item {
+      padding: 10px 5px;
+      margin: 0px 20px;
     }
-    #item-3{
-        text-align: right;
+    #item-3 {
+      text-align: right;
     }
-    #project-imag{
-        width: 100%;
-        height: 100%;
-        object-fit: fill;
-        border-radius: 10px;
-    } 
-    .moveBottomBtn{
-        text-align: center;
-        position: absolute;
-        /*이하(gpt)*/
-        bottom: 20px; /* 버튼을 부모 요소의 아래에 붙임 */
-        left: 50%;
-        transform: translateX(-50%);
+    #project-imag {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      border-radius: 10px;
     }
-    .arrow{
-        height: 30px;
-        width: 30px;
-        filter:invert(); 
+    .moveBottomBtn {
+      text-align: center;
+      position: absolute;
+      /*이하(gpt)*/
+      bottom: 20px; /* 버튼을 부모 요소의 아래에 붙임 */
+      left: 50%;
+      transform: translateX(-50%);
     }
-    #down-arrow{
-        position: relative;
-        bottom: 130px;
+    .arrow {
+      height: 30px;
+      width: 30px;
+      filter: invert();
+    }
+    #down-arrow {
+      position: relative;
+      bottom: 130px;
     }
 
     /*===두번째 페이지===*/
-    .content-guide{
-        width: 900px;
-        margin: 0px auto; 
-        padding: 20px;
-        border-radius: 5px;
+    .content-guide {
+      width: 900px;
+      margin: 0px auto;
+      padding: 20px;
+      border-radius: 5px;
     }
-    .moveTopBtn{
-        text-align: center;
-        padding: 20px 0px 20px 0px;
+    .moveTopBtn {
+      text-align: center;
+      padding: 20px 0px 20px 0px;
     }
-    .contents-title-guide{
-        text-align: center;
-        font-weight: bold ;
-        font-size: 50px;
-        padding: 0px 0px 0px 30px;
+    .contents-title-guide {
+      text-align: center;
+      font-weight: bold;
+      font-size: 50px;
+      padding: 0px 0px 0px 30px;
     }
-    .guide-list{
-        width: 500px;
-        height: 500px;
-        margin: 30px auto 40px auto;
-        list-style-type: none;
-        text-align: center;
+    .guide-list {
+      width: 500px;
+      height: 500px;
+      margin: 30px auto 40px auto;
+      list-style-type: none;
+      text-align: center;
     }
-    .guide-item{
-        width: 400px;
-        height: 80px;
-        margin: 30px auto 0px auto;
-        border: 1px solid gray;
-        border-radius: 50px;
-        background-color: white;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    .guide-item {
+      width: 400px;
+      height: 80px;
+      margin: 30px auto 0px auto;
+      border: 1px solid gray;
+      border-radius: 50px;
+      background-color: white;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
-        display: grid;
-        grid-template-columns: 100px 300px;
-        grid-template-rows: 80px; 
+      display: grid;
+      grid-template-columns: 100px 300px;
+      grid-template-rows: 80px;
     }
-    #book-img{
-        width: 50px;
-        height: 50px;
-        padding-top: 15px;
+    #book-img {
+      width: 50px;
+      height: 50px;
+      padding-top: 15px;
     }
-    .guide-item-text{
-        text-align: left;
-        color: black;
+    .guide-item-text {
+      text-align: left;
+      color: black;
     }
-    h3{
-        margin-bottom: 0px;
+    h3 {
+      margin-bottom: 0px;
     }
-    h5{
-        margin-top: 5px;
+    h5 {
+      margin-top: 5px;
     }
-</style>
-<script>
-    
-        window.addEventListener('load', function () {
-            var allElements = document.getElementsByTagName('*');
-            Array.prototype.forEach.call(allElements, function (el) {
-                var includePath = el.dataset.includePath;
-                if (includePath) {
-                    var xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function () {
-                        if (this.readyState == 4 && this.status == 200) {
-                            el.outerHTML = this.responseText;
-                        }
-                    };
-                    xhttp.open('GET', includePath, true);
-                    xhttp.send();
-                }
-            });
-        });
-</script>
-<body>
+  </style>
+  <script>
+    window.addEventListener("load", function () {
+      var allElements = document.getElementsByTagName("*");
+      Array.prototype.forEach.call(allElements, function (el) {
+        var includePath = el.dataset.includePath;
+        if (includePath) {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              el.outerHTML = this.responseText;
+            }
+          };
+          xhttp.open("GET", includePath, true);
+          xhttp.send();
+        }
+      });
+    });
+  </script>
+  <body>
     <div data-include-path="./header.html">헤더</div>
     <div class="container">
-        <!-- team goal 소개-->
-        <div class="list" id="goal">
-            <div><h2 id="team-intro">팀 소개</h2></div>
-            <div class="content-goal">
-                <div class="contents-title-goal">GOAL</div>
-                <div class="contents">
-                    <div class="item"><img src="images/team-project.jpg" id="project-imag" alt="team1"></div>
-                    <div class="item">
-                        <h2>
-                            좋은 동료,
-                        <br>
-                            좋은 포트폴리오
-                        </h2>
-                        <h4>
-                            캠프를 진행하면서 좋은 동료로서 성장과 
-                            <br>
-                            좋은 포트폴리오를 쌓아가려합니다.
-                        </h4>
-                    </div>
-                    <div class="item" id="item-3">
-                        <h2>
-                            좋은 개발자로서 성장
-                        </h2>
-                        <h4>
-                            트랜트르 따라가며 소통이 되는 
-                            <br>
-                            개발자가 되기 위해 노력하고 달려나가겠습니다.
-                        </h4>
-                    </div>
-                    <div class="item"><img src="images/team-project2.jpg" id="project-imag" alt="team2"></div>
-                </div>
+      <!-- team goal 소개-->
+      <div class="list" id="goal">
+        <div><h2 id="team-intro">팀 소개</h2></div>
+        <div class="content-goal">
+          <div class="contents-title-goal">GOAL</div>
+          <div class="contents">
+            <div class="item">
+              <img
+                src="images/team-project.jpg"
+                id="project-imag"
+                alt="team1"
+              />
             </div>
-            <div class="moveBottomBtn"><img src="images/down-arrow.png" class="arrow" id="down-arrow" alt="moveBottom"></div>
+            <div class="item">
+              <h2>
+                좋은 동료,
+                <br />
+                좋은 포트폴리오
+              </h2>
+              <h4>
+                캠프를 진행하면서 좋은 동료로서 성장과
+                <br />
+                좋은 포트폴리오를 쌓아가려합니다.
+              </h4>
+            </div>
+            <div class="item" id="item-3">
+              <h2>좋은 개발자로서 성장</h2>
+              <h4>
+                트랜트르 따라가며 소통이 되는
+                <br />
+                개발자가 되기 위해 노력하고 달려나가겠습니다.
+              </h4>
+            </div>
+            <div class="item">
+              <img
+                src="images/team-project2.jpg"
+                id="project-imag"
+                alt="team2"
+              />
+            </div>
+          </div>
         </div>
+        <div class="moveBottomBtn">
+          <img
+            src="images/down-arrow.png"
+            class="arrow"
+            id="down-arrow"
+            alt="moveBottom"
+          />
+        </div>
+      </div>
 
-        <!--team guide 소개-->
-        <div class="list" id="guide">
-            <div class="moveTopBtn"><img src="images/up-arrow.png" class="arrow" id="up-arrow" alt="moveTop"></div>
-            <div class="content-guide">
-                <div class="contents-title-guide">TEAM GUIDE</div>
-                <ul class="guide-list">
-                    <li class="guide-item">
-                        <div><img src="images/books.png" id="book-img" alt="book"></div>
-                        <div class="guide-item-text">
-                            <h3>인사이트 공유하기</h3>
-                            <h5>좋은 작업물이 있으면 함께 공유해요</h5>
-                        </div>
-                    </li>
-                    <li class="guide-item">
-                        <div><img src="images/books.png" id="book-img" alt="book"></div>
-                        <div class="guide-item-text">
-                            <h3>마이크 카메라 켜기</h3>
-                            <h5>팀원들과 자유롭게 소통해요</h5>
-                        </div>
-                    </li>
-                    <li class="guide-item">
-                        <div><img src="images/books.png" id="book-img" alt="book"></div>
-                        <div class="guide-item-text">
-                            <h3>지각하지 않기</h3>
-                            <h5>약속시간을 잘 지켜요</h5>
-                        </div>
-                    </li>
-                    <li class="guide-item">
-                        <div><img src="images/books.png" id="book-img" alt="book"></div>
-                        <div class="guide-item-text">
-                            <h3>궁금한거 물어보기</h3>
-                            <h5>모르는게 있으면 함께 고민하고 해결해요</h5>
-                        </div>
-                    </li>
-                </ul>      
-            </div>
-        </div> 
-        <div data-include-path="./footer.html">헤더</div>
+      <!--team guide 소개-->
+      <div class="list" id="guide">
+        <div class="moveTopBtn">
+          <img
+            src="images/up-arrow.png"
+            class="arrow"
+            id="up-arrow"
+            alt="moveTop"
+          />
+        </div>
+        <div class="content-guide">
+          <div class="contents-title-guide">TEAM GUIDE</div>
+          <ul class="guide-list">
+            <li class="guide-item">
+              <div><img src="images/books.png" id="book-img" alt="book" /></div>
+              <div class="guide-item-text">
+                <h3>인사이트 공유하기</h3>
+                <h5>좋은 작업물이 있으면 함께 공유해요</h5>
+              </div>
+            </li>
+            <li class="guide-item">
+              <div><img src="images/books.png" id="book-img" alt="book" /></div>
+              <div class="guide-item-text">
+                <h3>마이크 카메라 켜기</h3>
+                <h5>팀원들과 자유롭게 소통해요</h5>
+              </div>
+            </li>
+            <li class="guide-item">
+              <div><img src="images/books.png" id="book-img" alt="book" /></div>
+              <div class="guide-item-text">
+                <h3>지각하지 않기</h3>
+                <h5>약속시간을 잘 지켜요</h5>
+              </div>
+            </li>
+            <li class="guide-item">
+              <div><img src="images/books.png" id="book-img" alt="book" /></div>
+              <div class="guide-item-text">
+                <h3>궁금한거 물어보기</h3>
+                <h5>모르는게 있으면 함께 고민하고 해결해요</h5>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div data-include-path="./footer.html">헤더</div>
     </div>
     <script>
+      const bottomBtn = document.querySelector(".moveBottomBtn");
+      const topBtn = document.querySelector(".moveTopBtn");
 
-        const bottomBtn = document.querySelector(".moveBottomBtn");
-        const topBtn = document.querySelector(".moveTopBtn");
-
-        // 버튼 클릭 시 페이지 하단으로 이동
-        bottomBtn.onclick = () => {
-            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });  
-        }
-        // 버튼 클릭 시 맨 위로 이동
-        topBtn.onclick = () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });  
-        }
+      // 버튼 클릭 시 페이지 하단으로 이동
+      bottomBtn.onclick = () => {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      };
+      // 버튼 클릭 시 맨 위로 이동
+      topBtn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
     </script>
-</body>
+  </body>
 </html>

@@ -1,5 +1,4 @@
 body,
-ul,
 h2,
 p {
   margin: 0;
@@ -60,6 +59,8 @@ body {
   padding: 15px;
   border-radius: 30px;
   box-sizing: border-box;
+  object-fit: cover;
+  object-position: center -50px;
 }
 
 .members-img:hover {
