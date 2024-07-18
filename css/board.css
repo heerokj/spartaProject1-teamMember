@@ -1,5 +1,6 @@
 body {
     width: 1200px;
+    height: 2000px;
     margin: 0 auto;
     background-color: #D9D9D9;
 }
@@ -70,9 +71,11 @@ th, td {
 }
 #writer {
     width: 6.5%;
+    /* 입력 커서가 중앙으로 이동 */
     text-align: center;
 }
 #writer::placeholder {
+    /* input의 placeholder가 중앙으로 이동 */
     text-align: center;
 }
 #content {
