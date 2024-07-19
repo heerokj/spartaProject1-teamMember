@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModalButtons = document.querySelectorAll(".close-modal");
   const messageIcon = document.querySelectorAll(".message-icon");
 
-  // 핸드폰 번호 복사
   messageIcon.forEach((message) => {
     message.addEventListener("click", (e) => {
       const contactInfo = message.getAttribute("data-contact");
