@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
   const teamItems = document.querySelectorAll(".team-item");
   const closeModalButtons = document.querySelectorAll(".close-modal");
-  const messageIcon = document.querySelector(".message-icon");
+  const messageIcon = document.querySelectorAll(".message-icon");
 
-  // 클립보드에 복사
-  messageIcon.addEventListener("click", (e) => {
-    const contactInfo = messageIcon.getAttribute("data-contact");
-    e.stopPropagation();
-    navigator.clipboard
-      .writeText(contactInfo)
-      .then(() => {
-        alert(`복사되었습니다: ${contactInfo}`);
-      })
-      .catch((err) => {
-        console.error("복사 실패", err);
-      });
+  // 핸드폰 번호 복사
+  messageIcon.forEach((message) => {
+    message.addEventListener("click", (e) => {
+      const contactInfo = message.getAttribute("data-contact");
+      e.stopPropagation();
+      navigator.clipboard
+        .writeText(contactInfo)
+        .then(() => {
+          alert(`복사되었습니다: ${contactInfo}`);
+        })
+        .catch((err) => {
+          console.error("복사 실패", err);
+        });
+    });
   });
 
   teamItems.forEach((item) => {
