@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>응원게시판</title>
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/board.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/includeHTML.js"></script>
     <script type="module" src="js/firebase.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div data-include-path="./header.html"></div>
+      <div data-include-path="./header.html"></div>
     </header>
 
     <div class="main">
-        <div id="tablebox">
-            <table id="articles">
-                <tr>
-                    <th class="num">번호</th>
-                    <th class="contents">내용</th>
-                    <th class="writers">작성자</th>
-                    <th class="date">날짜</th>
-                    <th colspan="2" class="tablebtn"></th>
-                </tr>
-            </table>
-        </div>
+      <div id="tablebox">
+        <table id="articles">
+          <tr>
+            <th class="num">번호</th>
+            <th class="contents">내용</th>
+            <th class="writers">작성자</th>
+            <th class="date">날짜</th>
+            <th colspan="2" class="tablebtn"></th>
+          </tr>
+        </table>
+      </div>
 
-        <div id="inputbox">
-            <input type="text" placeholder="작성자" id="writer">
-            <input type="text" placeholder="내용을 입력해주세요" id="content">
-            <button id="postbtn">등록</button>
-        </div>
+      <div id="inputbox">
+        <input type="text" placeholder="작성자" id="writer" />
+        <input type="text" placeholder="내용을 입력해주세요" id="content" />
+        <button id="postbtn">등록</button>
+      </div>
     </div>
 
     <footer>
-        <div data-include-path="./footer.html"></div>
+      <div data-include-path="./footer.html"></div>
     </footer>
-</body>
-
+  </body>
 </html>
