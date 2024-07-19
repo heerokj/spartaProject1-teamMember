@@ -1,95 +1,99 @@
 body {
-    background-color: #FFA802;
+  background-color: #ffa802;
 }
 button {
-    background-color: #FFA802;
-    border: 1px solid white;
-    outline: none;
+  background-color: #ffa802;
+  border: 1px solid white;
+  outline: none;
 }
 button:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .main {
-    width: 1200px;
-    margin: 180px auto 0 auto;
+  width: 1200px;
+  margin: 180px auto 0 auto;
 }
 #tablebox {
-    min-height: 550px;
+  min-height: 550px;
 }
 table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
 }
-th, td {
-    border: 1px solid white;
-    text-align: center;
-    padding: 5px 10px;
-    color: white;
+th,
+td {
+  border: 1px solid white;
+  text-align: center;
+  padding: 5px 10px;
+  color: white;
 }
 .num {
-    width: 7%;
+  width: 7%;
 }
-.writers, .date {
-    width: 8%;
+.writers,
+.date {
+  width: 8%;
 }
 .tablebtn {
-    width: 5%;
-    border-top: 0;
-    border-right: 0;
+  width: 5%;
+  border-top: 0;
+  border-right: 0;
 }
 .tablebtns {
-    padding: 0;
+  padding: 0;
 }
 .updatebtn {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    padding: 0;
-    color: white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  color: white;
 }
 .deletebtn {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    padding: 0;
-    color: white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  color: white;
 }
 #inputbox {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
 }
 #inputbox > input {
-    color: white;
-    height: 35px;
-    background-color: #FFA802;
-    border: 1px solid white;
-    outline: none;
+  color: white;
+  height: 35px;
+  background-color: #ffa802;
+  border: 1px solid white;
+  outline: none;
 }
 #writer {
-    width: 6.5%;
-    /* 입력 커서가 중앙으로 이동 */
-    text-align: center;
+  width: 6.5%;
+  /* 입력 커서가 중앙으로 이동 */
+  text-align: center;
 }
 #writer::placeholder {
-    /* input의 placeholder가 중앙으로 이동 */
-    text-align: center;
-    color: white;
+  /* input의 placeholder가 중앙으로 이동 */
+  text-align: center;
+  color: white;
 }
 #content {
-    width: 80%;
+  width: 80%;
+  padding-left: 10px;
 }
 #content::placeholder {
-    color: white;
+  color: white;
 }
 #postbtn {
-    width: 10%;
-    color: white;
+  width: 10%;
+  color: white;
+  cursor: pointer;
 }
