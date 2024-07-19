@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageIcon = document.querySelector(".message-icon");
 
   // 클립보드에 복사
-  messageIcon.addEventListener("click", () => {
+  messageIcon.addEventListener("click", (e) => {
     const contactInfo = messageIcon.getAttribute("data-contact");
-    event.stopPropagation();
+    e.stopPropagation();
     navigator.clipboard
       .writeText(contactInfo)
       .then(() => {
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 클릭 이벤트버블링 제거
     const links = item.querySelectorAll(".icon-link");
     links.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.stopPropagation();
+      link.addEventListener("click", (e) => {
+        e.stopPropagation();
       });
     });
   });

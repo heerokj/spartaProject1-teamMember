@@ -27,11 +27,11 @@ body {
   display: block;
 }
 
-.team_text {
+/* .team_text {
   display: block;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 p {
   font-size: 24px;
@@ -58,9 +58,11 @@ p {
   color: #ffa802;
   text-decoration: none;
   text-align: center;
+  font-size: 18px;
 }
 
 .team_btn:hover {
   background-color: #ffa802;
   color: white;
+  font-weight: bold;
 }
