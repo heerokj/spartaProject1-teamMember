@@ -93,7 +93,10 @@ $('.deletebtn').click(async function () {
     if (isDel == true) {
         await deleteDoc(doc(db, "board_test", this_id));
         alert("삭제가 완료되었습니다!");
+        window.location.reload();
     }
-
-    window.location.reload();
+    else {
+        alert("삭제가 취소되었습니다");
+    }
+    
 });
