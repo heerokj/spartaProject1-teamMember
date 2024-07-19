@@ -148,8 +148,9 @@ body {
 }
 
 .modal-img {
-  border-radius: 1000px;
+  border-radius: 100px;
   height: 200px;
+  width: 200px;
 }
 
 .close-modal {

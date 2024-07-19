@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModalButtons = document.querySelectorAll(".close-modal");
   const messageIcon = document.querySelectorAll(".message-icon");
 
-  // 클립보드에 복사
   messageIcon.forEach((message) => {
     message.addEventListener("click", (e) => {
       const contactInfo = message.getAttribute("data-contact");
