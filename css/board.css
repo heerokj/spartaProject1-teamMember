@@ -1,9 +1,9 @@
 body {
-    background-color: #D9D9D9;
+    background-color: #FFA802;
 }
 button {
-    background-color: #D9D9D9;
-    border: 1px solid black;
+    background-color: #FFA802;
+    border: 1px solid white;
     outline: none;
 }
 button:hover {
@@ -11,20 +11,21 @@ button:hover {
 }
 .main {
     width: 1200px;
-    margin: 110px auto 0 auto;
+    margin: 180px auto 0 auto;
 }
 #tablebox {
-    min-height: 596px;
+    min-height: 550px;
 }
 table {
     border-collapse: collapse;
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
 }
 th, td {
-    border: 1px solid black;
+    border: 1px solid white;
     text-align: center;
     padding: 5px 10px;
+    color: white;
 }
 .num {
     width: 7%;
@@ -33,7 +34,7 @@ th, td {
     width: 8%;
 }
 .tablebtn {
-    width: 6%;
+    width: 5%;
     border-top: 0;
     border-right: 0;
 }
@@ -47,6 +48,7 @@ th, td {
     height: 100%;
     border: 0;
     padding: 0;
+    color: white;
 }
 .deletebtn {
     display: flex;
@@ -55,18 +57,20 @@ th, td {
     height: 100%;
     border: 0;
     padding: 0;
+    color: white;
 }
 #inputbox {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
 }
 #inputbox > input {
+    color: white;
     height: 35px;
-    background-color: #D9D9D9;
-    border: 1px solid black;
+    background-color: #FFA802;
+    border: 1px solid white;
     outline: none;
 }
 #writer {
@@ -77,10 +81,15 @@ th, td {
 #writer::placeholder {
     /* input의 placeholder가 중앙으로 이동 */
     text-align: center;
+    color: white;
 }
 #content {
     width: 80%;
 }
+#content::placeholder {
+    color: white;
+}
 #postbtn {
     width: 10%;
+    color: white;
 }
